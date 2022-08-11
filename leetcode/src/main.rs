@@ -1,5 +1,10 @@
+use std::ptr::write;
 
 fn main() {
-    let s1 = "Hello Rust.";  // 变量绑定
+    let mut  s1 = "Hello Rust.";  // 变量绑定
+    s1 = "xxasdfasdf";
+    for c in s1.chars() {
+        println!("{}",&c)
+    }
     println!("printing {}", &s1);
 }
