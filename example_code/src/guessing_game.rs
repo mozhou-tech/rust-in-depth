@@ -26,7 +26,12 @@ pub(crate) fn guess() {
         }
     }
 }
-
+#[cfg(test)]
 mod tests {
+    use crate::guessing_game::guess;
 
+    #[test]
+    fn test_guess(){
+        guess()
+    }
 }
