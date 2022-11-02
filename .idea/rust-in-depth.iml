@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/example_code/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lang/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/web-axum/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/embeded/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/example_code/target" />
       <excludeFolder url="file://$MODULE_DIR$/lang/target" />
       <excludeFolder url="file://$MODULE_DIR$/target" />

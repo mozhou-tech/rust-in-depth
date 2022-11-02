@@ -1,4 +1,3 @@
 mod traits;
 mod prelude;
-
-fn main() {}
+mod types;

@@ -4,5 +4,6 @@ members = [
     "design-pattern",
     "lang",
     "leetcode",
-    "web-axum"
+    "web-axum",
+    "embeded"
 ]
