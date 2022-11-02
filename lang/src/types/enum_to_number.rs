@@ -24,7 +24,7 @@ mod tests {
     #[test]
     fn test_enum_to_number() {
         let x = MyEnum::C as i32;
-
+        println!("MyEnum::C in number : {:?}",x);
         match x.try_into() {
             Ok(MyEnum::A) => println!("a"),
             Ok(MyEnum::B) => println!("b"),
