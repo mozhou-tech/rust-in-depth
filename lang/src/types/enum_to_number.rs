@@ -1,4 +1,5 @@
 #![allow(unused)]
+#[repr(i32)]
 enum MyEnum {
     A,
     B,
@@ -30,6 +31,20 @@ mod tests {
             Ok(MyEnum::B) => println!("b"),
             Ok(MyEnum::C) => println!("c"),
             Err(_) => eprintln!("unknown number"),
+        }
+    }
+
+    #[test]
+    fn test_enum_to_number_transmute(){
+        let x = MyEnum::C;
+        let y = x as i32;
+        let z: MyEnum = unsafe { std::mem::transmute(y) };
+
+        // match the enum that came from an int
+        match z {
+            MyEnum::A => { println!("Found A"); }
+            MyEnum::B => { println!("Found B"); }
+            MyEnum::C => { println!("Found C"); }
         }
     }
 }
