@@ -1,10 +1,22 @@
 #![allow(unused)]
+
+use num_enum::IntoPrimitive;
+
 #[repr(i32)]
 enum MyEnum {
     A,
     B,
     C,
 }
+
+#[derive(IntoPrimitive)]
+#[repr(u8)]
+enum Number {
+    Zero,
+    One,
+    Two,
+}
+
 impl TryFrom<i32> for MyEnum {
     type Error = ();
 
@@ -20,12 +32,13 @@ impl TryFrom<i32> for MyEnum {
 
 #[cfg(test)]
 mod tests {
+
     use super::*;
 
     #[test]
     fn test_enum_to_number() {
         let x = MyEnum::C as i32;
-        println!("MyEnum::C in number : {:?}",x);
+        println!("MyEnum::C in number : {:?}", x);
         match x.try_into() {
             Ok(MyEnum::A) => println!("a"),
             Ok(MyEnum::B) => println!("b"),
@@ -35,7 +48,7 @@ mod tests {
     }
 
     #[test]
-    fn test_enum_to_number_transmute(){
+    fn test_enum_to_number_transmute() {
         let x = MyEnum::C;
         let y = x as i32;
         let z: MyEnum = unsafe { std::mem::transmute(y) };
@@ -46,5 +59,12 @@ mod tests {
             MyEnum::B => { println!("Found B"); }
             MyEnum::C => { println!("Found C"); }
         }
+    }
+
+    /// 使用 num_enum 库
+    #[test]
+    fn test_num_enum_lib() {
+        let x: u8 = Number::Two.into();
+        println!("{:?}", x)
     }
 }

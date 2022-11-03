@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 tokio = "1.21.2"
+num_enum = "0.5.7"
