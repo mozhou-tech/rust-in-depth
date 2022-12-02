@@ -1,5 +1,7 @@
 [package]
 edition = "2021"
-name = "design-pattern"
+name = "gui"
 version = "0.1.0"
-[[lib]]
+
+[lib]
+path = "lib.rs"
