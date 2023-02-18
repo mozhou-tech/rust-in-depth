@@ -32,5 +32,6 @@ members = [
     "lang",
     "leetcode",
     "web-axum",
-    "embeded"
+    "embeded",
+    "tower"
 ]
