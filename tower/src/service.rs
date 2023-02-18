@@ -28,8 +28,10 @@ where
 
     fn call(&mut self, request: Request) -> Self::Future {
         // Insert log statement here or other functionality
-        println!("HelloService: request = {:?}, target = {:?}", request, self.target);
-        self.service.call(request)
+        println!("HelloService-1: request = {:?}, target = {:?}", request, self.target);
+        let fu = self.service.call(request);
+        println!("HelloService-2");
+        fu
     }
 }
 
@@ -48,7 +50,10 @@ impl<S, Request> Service<Request> for Hello2Service<S>
 
     fn call(&mut self, request: Request) -> Self::Future {
         // Insert log statement here or other functionality
-        println!("Hello2Service: request = {:?}, target = {:?}", request, self.target);
-        self.service.call(request)
+        // 洋葱模型
+        println!("Hello2Service-1: request = {:?}, target = {:?}", request, self.target);
+        let fu = self.service.call(request);
+        println!("Hello2Service-2");
+        fu
     }
 }
